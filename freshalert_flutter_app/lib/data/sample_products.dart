@@ -1,0 +1,66 @@
+import 'package:freshalert_flutter/models/product.dart';
+
+final List<Product> sampleProducts = [
+  Product(
+    name: 'Milk',
+    category: ProductCategory.food,
+    location: 'Fridge',
+    expiryDate: DateTime.now().add(const Duration(days: 5)),
+    notes: 'Whole milk',
+    status: ProductStatus.safe,
+  ),
+  Product(
+    name: 'Yogurt',
+    category: ProductCategory.food,
+    location: 'Fridge',
+    expiryDate: DateTime.now().add(const Duration(days: 2)),
+    notes: 'Strawberry flavor',
+    status: ProductStatus.soon,
+  ),
+  Product(
+    name: 'Aspirin',
+    category: ProductCategory.medicine,
+    location: 'Bathroom',
+    expiryDate: DateTime.now().subtract(const Duration(days: 1)),
+    notes: '500mg',
+    status: ProductStatus.expired,
+  ),
+  Product(
+    name: 'Bread',
+    category: ProductCategory.food,
+    location: 'Pantry',
+    expiryDate: DateTime.now().add(const Duration(days: 3)),
+    notes: 'Whole wheat',
+    status: ProductStatus.safe,
+  ),
+  Product(
+    name: 'Hand Sanitizer',
+    category: ProductCategory.daily,
+    location: 'Bathroom',
+    expiryDate: DateTime.now().add(const Duration(days: 30)),
+    status: ProductStatus.safe,
+  ),
+  Product(
+    name: 'Cheese',
+    category: ProductCategory.food,
+    location: 'Fridge',
+    expiryDate: DateTime.now().add(const Duration(days: 1)),
+    notes: 'Cheddar',
+    status: ProductStatus.soon,
+  ),
+  Product(
+    name: 'Orange Juice',
+    category: ProductCategory.food,
+    location: 'Fridge',
+    expiryDate: DateTime.now().subtract(const Duration(days: 2)),
+    status: ProductStatus.expired,
+  ),
+  Product(
+    name: 'Vitamins',
+    category: ProductCategory.medicine,
+    location: 'Cabinet',
+    expiryDate: DateTime.now().add(const Duration(days: 60)),
+    notes: 'Vitamin C',
+    status: ProductStatus.safe,
+  ),
+];

@@ -1,0 +1,27 @@
+{
+  "overview": "FreshAlert is a high-fidelity interactive prototype for a smart expiry reminder mobile app. Built with Material Design 3 aesthetics, it features a vibrant green-yellow-red color system for tracking food and medicine expiry dates, neumorphic cards, smooth animations, and 5 fully interactive screens including dashboard, add product, categories, product detail, and settings — all with dark/light mode support.",
+  "features": [
+    "Color-coded expiry dashboard (green/yellow/red status)",
+    "Add product with camera scanner preview and date picker",
+    "Category filter tabs with progress circles",
+    "Product detail view with Use Now, Share, Delete actions",
+    "Dark/light mode toggle",
+    "Animated FAB and confetti on save",
+    "Swipe-to-delete with trash animation",
+    "Pull-to-refresh with sample data",
+    "Search and voice icon in app bar",
+    "Neumorphic Material Design 3 cards with 24dp corners"
+  ],
+  "category": "productivity",
+  "tags": [
+    "mobile",
+    "prototype",
+    "food-expiry",
+    "material-design",
+    "dark-mode",
+    "animations",
+    "zustand",
+    "recharts"
+  ],
+  "last_updated": "2026-04-28T07:24:07.462Z"
+}

@@ -1,0 +1,262 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-display: "Figtree", sans-serif;
+    --font-body: "GeneralSans", sans-serif;
+    --font-mono: "Geist Mono", monospace;
+    --radius: 1.5rem;
+
+    --background: 0.98 0.01 270;
+    --foreground: 0.12 0.05 258;
+    --card: 1.0 0 0;
+    --card-foreground: 0.12 0.05 258;
+    --popover: 0.98 0.01 270;
+    --popover-foreground: 0.12 0.05 258;
+
+    --primary: 0.65 0.22 142;
+    --primary-foreground: 0.98 0 0;
+
+    --secondary: 0.7 0.24 68;
+    --secondary-foreground: 0.08 0 0;
+    --muted: 0.92 0.03 268;
+    --muted-foreground: 0.45 0.04 260;
+
+    --accent: 0.55 0.24 22;
+    --accent-foreground: 0.98 0 0;
+
+    --destructive: 0.55 0.24 22;
+    --destructive-foreground: 0.98 0 0;
+
+    --border: 0.88 0.03 268;
+    --input: 0.94 0.02 270;
+    --ring: 0.65 0.22 142;
+
+    --chart-1: 0.65 0.22 142;
+    --chart-2: 0.7 0.24 68;
+    --chart-3: 0.55 0.24 22;
+    --chart-4: 0.52 0.18 258;
+    --chart-5: 0.62 0.2 185;
+
+    --sidebar: 0.96 0.01 270;
+    --sidebar-foreground: 0.12 0.05 258;
+    --sidebar-primary: 0.65 0.22 142;
+    --sidebar-primary-foreground: 0.98 0 0;
+    --sidebar-accent: 0.7 0.24 68;
+    --sidebar-accent-foreground: 0.08 0 0;
+    --sidebar-border: 0.88 0.03 268;
+    --sidebar-ring: 0.65 0.22 142;
+
+    --success: 0.65 0.22 142;
+    --warning: 0.7 0.24 68;
+    --danger: 0.55 0.24 22;
+
+    --gradient-safe: linear-gradient(
+      135deg,
+      oklch(0.65 0.22 142),
+      oklch(0.72 0.18 155)
+    );
+    --gradient-warning: linear-gradient(
+      135deg,
+      oklch(0.7 0.24 68),
+      oklch(0.75 0.2 45)
+    );
+    --gradient-danger: linear-gradient(
+      135deg,
+      oklch(0.55 0.24 22),
+      oklch(0.5 0.22 8)
+    );
+    --gradient-hero: linear-gradient(
+      180deg,
+      oklch(0.65 0.22 142 / 0.1),
+      oklch(0.7 0.24 68 / 0.05)
+    );
+
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px
+      rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px
+      rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px
+      rgba(0, 0, 0, 0.04);
+    --shadow-glow: 0 0 20px -5px rgba(76, 175, 80, 0.3);
+  }
+
+  .dark {
+    --background: 0.12 0.02 260;
+    --foreground: 0.95 0.02 270;
+    --card: 0.18 0.03 258;
+    --card-foreground: 0.92 0.02 270;
+    --popover: 0.22 0.03 258;
+    --popover-foreground: 0.95 0.02 270;
+
+    --primary: 0.72 0.2 142;
+    --primary-foreground: 0.12 0.02 260;
+
+    --secondary: 0.78 0.22 68;
+    --secondary-foreground: 0.08 0 0;
+    --muted: 0.28 0.03 260;
+    --muted-foreground: 0.6 0.03 268;
+
+    --accent: 0.62 0.22 22;
+    --accent-foreground: 0.12 0.02 260;
+
+    --destructive: 0.62 0.22 22;
+    --destructive-foreground: 0.12 0.02 260;
+
+    --border: 0.32 0.03 258;
+    --input: 0.25 0.03 260;
+    --ring: 0.72 0.2 142;
+
+    --chart-1: 0.72 0.2 142;
+    --chart-2: 0.78 0.22 68;
+    --chart-3: 0.62 0.22 22;
+    --chart-4: 0.65 0.22 258;
+    --chart-5: 0.7 0.2 185;
+
+    --sidebar: 0.15 0.03 260;
+    --sidebar-foreground: 0.92 0.02 270;
+    --sidebar-primary: 0.72 0.2 142;
+    --sidebar-primary-foreground: 0.12 0.02 260;
+    --sidebar-accent: 0.78 0.22 68;
+    --sidebar-accent-foreground: 0.12 0.02 260;
+    --sidebar-border: 0.32 0.03 258;
+    --sidebar-ring: 0.72 0.2 142;
+
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px
+      rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px
+      rgba(0, 0, 0, 0.3);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px
+      rgba(0, 0, 0, 0.3);
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+}
+
+@layer utilities {
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .card-neumorphic {
+    @apply rounded-2xl border border-border bg-card shadow-md;
+  }
+
+  .card-elevated {
+    @apply rounded-2xl border border-border bg-card shadow-lg;
+  }
+
+  .card-interactive:hover {
+    @apply shadow-xl transition-smooth;
+  }
+
+  .gradient-safe {
+    background: var(--gradient-safe);
+  }
+
+  .gradient-warning {
+    background: var(--gradient-warning);
+  }
+
+  .gradient-danger {
+    background: var(--gradient-danger);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .badge-safe {
+    @apply bg-success/20 text-success rounded-full px-3 py-1 text-xs font-semibold;
+  }
+
+  .badge-warning {
+    @apply bg-warning/20 text-warning rounded-full px-3 py-1 text-xs font-semibold;
+  }
+
+  .badge-danger {
+    @apply bg-danger/20 text-danger rounded-full px-3 py-1 text-xs font-semibold;
+  }
+
+  .text-display {
+    @apply font-display font-bold tracking-tight;
+  }
+
+  .text-heading-lg {
+    @apply text-display text-3xl leading-tight;
+  }
+
+  .text-heading-md {
+    @apply text-display text-2xl leading-snug;
+  }
+
+  .text-heading-sm {
+    @apply text-display text-xl leading-snug;
+  }
+
+  .text-body-lg {
+    @apply text-base leading-relaxed;
+  }
+
+  .text-body-md {
+    @apply text-sm leading-relaxed;
+  }
+
+  .text-body-sm {
+    @apply text-xs leading-loose;
+  }
+
+  .fab-pulse {
+    @apply animate-pulse;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-primary-foreground rounded-full px-6 py-3 font-semibold text-center transition-smooth hover:shadow-lg active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground rounded-full px-6 py-3 font-semibold text-center transition-smooth hover:shadow-md active:scale-95;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary text-primary rounded-full px-6 py-3 font-semibold text-center transition-smooth hover:bg-primary/10 active:scale-95;
+  }
+
+  .input-field {
+    @apply rounded-xl border border-input bg-muted/30 px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-smooth;
+  }
+
+  .mobile-viewport {
+    @apply w-full max-w-sm mx-auto;
+  }
+}
+
+@font-face {
+  font-family: "Figtree";
+  src: url("/assets/fonts/Figtree.woff2") format("woff2");
+  font-weight: 400 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GeneralSans";
+  src: url("/assets/fonts/GeneralSans.woff2") format("woff2");
+  font-weight: 400 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  src: url("/assets/fonts/GeistMono.woff2") format("woff2");
+  font-weight: 400 700;
+  font-display: swap;
+}
