@@ -1,7 +1,7 @@
 {
   "buildCommand": "flutter build web --release",
+  "installCommand": "flutter pub get",
   "outputDirectory": "build/web",
-  "framework": "flutter",
   "env": {
     "FLUTTER_VERSION": "3.41.6"
   },
