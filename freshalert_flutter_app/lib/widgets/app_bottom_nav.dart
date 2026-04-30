@@ -5,9 +5,9 @@ class AppBottomNav extends StatelessWidget {
   final int currentIndex;
 
   const AppBottomNav({
-    Key? key,
+    super.key,
     required this.currentIndex,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

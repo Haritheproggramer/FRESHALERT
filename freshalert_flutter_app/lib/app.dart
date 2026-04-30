@@ -4,7 +4,7 @@ import 'package:freshalert_flutter/providers/app_provider.dart';
 import 'package:freshalert_flutter/utils/router.dart';
 
 class FreshAlertApp extends ConsumerWidget {
-  const FreshAlertApp({Key? key}) : super(key: key);
+  const FreshAlertApp({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

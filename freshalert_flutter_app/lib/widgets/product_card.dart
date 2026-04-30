@@ -9,12 +9,12 @@ class ProductCard extends StatefulWidget {
   final int index;
 
   const ProductCard({
-    Key? key,
+    super.key,
     required this.product,
     required this.onTap,
     required this.onDelete,
     required this.index,
-  }) : super(key: key);
+  });
 
   @override
   State<ProductCard> createState() => _ProductCardState();

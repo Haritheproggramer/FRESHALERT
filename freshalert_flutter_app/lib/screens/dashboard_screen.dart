@@ -2,13 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:freshalert_flutter/providers/products_provider.dart';
-import 'package:freshalert_flutter/utils/product_helpers.dart';
 import 'package:freshalert_flutter/widgets/stat_card.dart';
 import 'package:freshalert_flutter/widgets/product_card.dart';
 import 'package:freshalert_flutter/widgets/app_bottom_nav.dart';
 
 class DashboardScreen extends ConsumerStatefulWidget {
-  const DashboardScreen({Key? key}) : super(key: key);
+  const DashboardScreen({super.key});
 
   @override
   ConsumerState<DashboardScreen> createState() => _DashboardScreenState();

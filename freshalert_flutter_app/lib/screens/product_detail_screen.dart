@@ -8,8 +8,7 @@ import 'package:freshalert_flutter/utils/product_helpers.dart';
 class ProductDetailScreen extends ConsumerStatefulWidget {
   final String productId;
 
-  const ProductDetailScreen({Key? key, required this.productId})
-      : super(key: key);
+  const ProductDetailScreen({super.key, required this.productId});
 
   @override
   ConsumerState<ProductDetailScreen> createState() =>
@@ -112,6 +111,10 @@ class _ProductDetailScreenState extends ConsumerState<ProductDetailScreen> {
           .read(productsProvider.notifier)
           .updateProduct(widget.productId, updatedProduct);
 
+      if (!mounted) {
+        return;
+      }
+
       setState(() {
         _isSaving = false;
         _isEditing = false;
@@ -125,7 +128,6 @@ class _ProductDetailScreenState extends ConsumerState<ProductDetailScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final products = ref.watch(productsProvider);
     _loadProduct();
 
     if (_product == null) {
@@ -402,7 +404,7 @@ class _ProductDetailScreenState extends ConsumerState<ProductDetailScreen> {
 
                     // Location
                     DropdownButtonFormField<String>(
-                      value: _selectedLocation,
+                      initialValue: _selectedLocation,
                       items: _locations
                           .map((loc) => DropdownMenuItem(
                                 value: loc,

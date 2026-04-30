@@ -6,7 +6,7 @@ import 'package:freshalert_flutter/providers/products_provider.dart';
 import 'package:freshalert_flutter/utils/product_helpers.dart';
 
 class AddProductScreen extends ConsumerStatefulWidget {
-  const AddProductScreen({Key? key}) : super(key: key);
+  const AddProductScreen({super.key});
 
   @override
   ConsumerState<AddProductScreen> createState() => _AddProductScreenState();
@@ -18,7 +18,6 @@ class _AddProductScreenState extends ConsumerState<AddProductScreen> {
   DateTime? _selectedDate;
   ProductCategory _selectedCategory = ProductCategory.food;
   String _selectedLocation = 'Fridge';
-  int _reminderDays = 3;
   bool _isLoading = false;
 
   final List<String> _locations = [
@@ -55,7 +54,7 @@ class _AddProductScreenState extends ConsumerState<AddProductScreen> {
     }
   }
 
-  void _submitForm() {
+  Future<void> _submitForm() async {
     if (_nameController.text.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Please enter product name')),
@@ -72,26 +71,34 @@ class _AddProductScreenState extends ConsumerState<AddProductScreen> {
 
     setState(() => _isLoading = true);
 
-    Future.delayed(const Duration(milliseconds: 500), () {
-      ref.read(productsProvider.notifier).addProduct(
-            name: _nameController.text,
-            category: _selectedCategory,
-            location: _selectedLocation,
-            expiryDate: _selectedDate!,
-            notes: _notesController.text.isEmpty ? null : _notesController.text,
-          );
+    await Future<void>.delayed(const Duration(milliseconds: 500));
 
-      setState(() => _isLoading = false);
+    if (!mounted) {
+      return;
+    }
 
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text('${_nameController.text} added successfully!'),
-          duration: const Duration(seconds: 2),
-        ),
-      );
+    ref.read(productsProvider.notifier).addProduct(
+          name: _nameController.text,
+          category: _selectedCategory,
+          location: _selectedLocation,
+          expiryDate: _selectedDate!,
+          notes: _notesController.text.isEmpty ? null : _notesController.text,
+        );
 
-      context.go('/');
-    });
+    setState(() => _isLoading = false);
+
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text('${_nameController.text} added successfully!'),
+        duration: const Duration(seconds: 2),
+      ),
+    );
+
+    if (!mounted) {
+      return;
+    }
+
+    context.go('/');
   }
 
   @override
@@ -183,7 +190,7 @@ class _AddProductScreenState extends ConsumerState<AddProductScreen> {
 
               // Location
               DropdownButtonFormField<String>(
-                value: _selectedLocation,
+                initialValue: _selectedLocation,
                 items: _locations
                     .map((loc) => DropdownMenuItem(
                           value: loc,

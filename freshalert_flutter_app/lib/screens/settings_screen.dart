@@ -5,7 +5,7 @@ import 'package:freshalert_flutter/providers/products_provider.dart';
 import 'package:freshalert_flutter/widgets/app_bottom_nav.dart';
 
 class SettingsScreen extends ConsumerWidget {
-  const SettingsScreen({Key? key}) : super(key: key);
+  const SettingsScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

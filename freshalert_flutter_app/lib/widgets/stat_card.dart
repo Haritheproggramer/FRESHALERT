@@ -7,12 +7,12 @@ class StatCard extends StatelessWidget {
   final Color textColor;
 
   const StatCard({
-    Key? key,
+    super.key,
     required this.count,
     required this.label,
     required this.bgColor,
     required this.textColor,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

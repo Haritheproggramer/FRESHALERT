@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:freshalert_flutter/models/product.dart';
 import 'package:freshalert_flutter/providers/products_provider.dart';
 import 'package:freshalert_flutter/widgets/app_bottom_nav.dart';
 import 'package:freshalert_flutter/widgets/stat_card.dart';
 
 class StatsScreen extends ConsumerWidget {
-  const StatsScreen({Key? key}) : super(key: key);
+  const StatsScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -168,7 +169,7 @@ class StatsScreen extends ConsumerWidget {
     );
   }
 
-  List<Widget> _buildCategoryStats(BuildContext context, List products) {
+  List<Widget> _buildCategoryStats(BuildContext context, List<Product> products) {
     final categories = {'Food': 0, 'Medicine': 0, 'Daily': 0};
 
     for (final product in products) {
@@ -190,16 +191,14 @@ class StatsScreen extends ConsumerWidget {
         .toList();
   }
 
-  String getCategoryName(category) {
+  String getCategoryName(ProductCategory category) {
     switch (category) {
-      case 'food':
+      case ProductCategory.food:
         return 'Food';
-      case 'medicine':
+      case ProductCategory.medicine:
         return 'Medicine';
-      case 'daily':
+      case ProductCategory.daily:
         return 'Daily';
-      default:
-        return 'Food';
     }
   }
 

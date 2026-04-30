@@ -8,7 +8,7 @@ import 'package:freshalert_flutter/widgets/product_card.dart';
 import 'package:freshalert_flutter/widgets/app_bottom_nav.dart';
 
 class CategoriesScreen extends ConsumerStatefulWidget {
-  const CategoriesScreen({Key? key}) : super(key: key);
+  const CategoriesScreen({super.key});
 
   @override
   ConsumerState<CategoriesScreen> createState() => _CategoriesScreenState();
