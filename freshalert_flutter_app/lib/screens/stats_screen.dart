@@ -88,6 +88,7 @@ class StatsScreen extends ConsumerWidget {
                 _buildStatRow(
                   context,
                   '🥦 Fresh',
+                  freshPercent,
                   '$freshPercent%',
                   totalFresh,
                   const Color(0xFF4CAF50),
@@ -96,6 +97,7 @@ class StatsScreen extends ConsumerWidget {
                 _buildStatRow(
                   context,
                   '⏰ Expiring Soon',
+                  soonPercent,
                   '$soonPercent%',
                   totalSoon,
                   const Color(0xFFFF9800),
@@ -104,6 +106,7 @@ class StatsScreen extends ConsumerWidget {
                 _buildStatRow(
                   context,
                   '❌ Expired',
+                  expiredPercent,
                   '$expiredPercent%',
                   totalExpired,
                   const Color(0xFFF44336),
@@ -133,7 +136,8 @@ class StatsScreen extends ConsumerWidget {
   Widget _buildStatRow(
     BuildContext context,
     String label,
-    String percentage,
+    String progressValue,
+    String percentageLabel,
     int count,
     Color color,
   ) {
@@ -150,7 +154,7 @@ class StatsScreen extends ConsumerWidget {
                   ),
             ),
             Text(
-              '$percentage ($count items)',
+              '$percentageLabel ($count items)',
               style: Theme.of(context).textTheme.labelSmall,
             ),
           ],
@@ -159,7 +163,7 @@ class StatsScreen extends ConsumerWidget {
         ClipRRect(
           borderRadius: BorderRadius.circular(8),
           child: LinearProgressIndicator(
-            value: double.parse(percentage) / 100,
+            value: double.parse(progressValue) / 100,
             minHeight: 8,
             backgroundColor: color.withAlpha(51),
             valueColor: AlwaysStoppedAnimation<Color>(color),
@@ -183,6 +187,7 @@ class StatsScreen extends ConsumerWidget {
               child: _buildStatRow(
                 context,
                 '${getEmoji(entry.key)} ${entry.key}',
+                (entry.value / products.length * 100).toStringAsFixed(1),
                 '${(entry.value / products.length * 100).toStringAsFixed(1)}%',
                 entry.value,
                 getColorForCategory(entry.key),
