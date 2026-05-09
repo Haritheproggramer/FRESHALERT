@@ -2,7 +2,7 @@ import 'package:uuid/uuid.dart';
 
 enum ProductStatus { safe, soon, expired }
 
-enum ProductCategory { food, medicine, daily }
+enum ProductCategory { food, medicine, daily, grocery, wrongItem }
 
 class Product {
   final String id;

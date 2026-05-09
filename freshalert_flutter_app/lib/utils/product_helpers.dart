@@ -69,6 +69,8 @@ const Map<ProductCategory, String> categoryIcons = {
   ProductCategory.food: '🥦',
   ProductCategory.medicine: '💊',
   ProductCategory.daily: '🧴',
+  ProductCategory.grocery: '🛒',
+  ProductCategory.wrongItem: '❌',
 };
 
 const Map<String, String> locationIcons = {
@@ -87,6 +89,10 @@ String getCategoryName(ProductCategory category) {
       return 'Medicine';
     case ProductCategory.daily:
       return 'Daily';
+    case ProductCategory.grocery:
+      return 'Grocery';
+    case ProductCategory.wrongItem:
+      return 'Wrong Item';
   }
 }
 
@@ -98,6 +104,10 @@ ProductCategory getCategoryFromName(String name) {
       return ProductCategory.medicine;
     case 'Daily':
       return ProductCategory.daily;
+    case 'Grocery':
+      return ProductCategory.grocery;
+    case 'Wrong Item':
+      return ProductCategory.wrongItem;
     default:
       return ProductCategory.food;
   }

@@ -174,7 +174,7 @@ class StatsScreen extends ConsumerWidget {
   }
 
   List<Widget> _buildCategoryStats(BuildContext context, List<Product> products) {
-    final categories = {'Food': 0, 'Medicine': 0, 'Daily': 0};
+    final categories = {'Food': 0, 'Medicine': 0, 'Daily': 0, 'Grocery': 0, 'Wrong Item': 0};
 
     for (final product in products) {
       final categoryName = getCategoryName(product.category);
@@ -204,17 +204,25 @@ class StatsScreen extends ConsumerWidget {
         return 'Medicine';
       case ProductCategory.daily:
         return 'Daily';
+      case ProductCategory.grocery:
+        return 'Grocery';
+      case ProductCategory.wrongItem:
+        return 'Wrong Item';
     }
   }
 
   String getEmoji(String category) {
     switch (category) {
       case 'Food':
-        return '🍕';
+        return '🥦';
       case 'Medicine':
         return '💊';
       case 'Daily':
         return '🧴';
+      case 'Grocery':
+        return '🛒';
+      case 'Wrong Item':
+        return '❌';
       default:
         return '📦';
     }
@@ -228,6 +236,10 @@ class StatsScreen extends ConsumerWidget {
         return const Color(0xFF2196F3);
       case 'Daily':
         return const Color(0xFFFF9800);
+      case 'Grocery':
+        return const Color(0xFF9C27B0);
+      case 'Wrong Item':
+        return const Color(0xFFE91E63);
       default:
         return const Color(0xFF9C27B0);
     }

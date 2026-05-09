@@ -50,6 +50,8 @@ class _CategoriesScreenState extends ConsumerState<CategoriesScreen> {
                   _buildCategoryChip('Food'),
                   _buildCategoryChip('Medicine'),
                   _buildCategoryChip('Daily'),
+                  _buildCategoryChip('Grocery'),
+                  _buildCategoryChip('Wrong Item'),
                   _buildCategoryChip('Expired'),
                 ]
                     .map((chip) => Padding(
