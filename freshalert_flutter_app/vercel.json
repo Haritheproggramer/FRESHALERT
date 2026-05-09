@@ -1,6 +1,6 @@
 {
-  "buildCommand": "flutter build web --release",
-  "installCommand": "flutter pub get",
+  "buildCommand": "echo 'Build already compiled locally'",
+  "installCommand": "echo 'Dependencies already installed'",
   "outputDirectory": "build/web",
   "env": {
     "FLUTTER_VERSION": "3.41.6"
